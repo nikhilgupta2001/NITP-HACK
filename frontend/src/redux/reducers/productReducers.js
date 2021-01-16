@@ -1,5 +1,5 @@
-import * as actionTypes from '../constants/productConstants';
-import { GET_PRODUCT_DETAILS_FAIL } from './../constants/productConstants';
+ import * as actionTypes from '../constants/productConstants';
+ import { GET_PRODUCT_DETAILS_FAIL } from './../constants/productConstants';
 const initialState={
     products:[],
 }
@@ -24,7 +24,7 @@ export const getProductsReducer=(state=initialState,action)=>{
                   default:
                        return state;
 
-            }
+        }
 };
 
 export const getProductDetailsReducer=(state={product:{}},action)=>{

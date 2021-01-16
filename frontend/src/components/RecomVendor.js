@@ -47,10 +47,9 @@ function RecomVendor() {
                          products.slice(0,6).map((product)=><Vendorcard key={products._id} 
                          productId={product._id}
                          name={product.name}
-                         
-                         description={product.description}
+                         phonenumber={product.phonenumber}
                          imageUrl={product.imageUrl}
-                         rating={product.rating}
+                         status ={product.status}
                          />)
                     )
                     }

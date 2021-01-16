@@ -8,6 +8,6 @@ router.get('/',
     getAllProducts );
 
 
-router.get('/:id',getAllProductById);
+router.get('/vendor/:id',getAllProductById);
 
 module.exports=router;

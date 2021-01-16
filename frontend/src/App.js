@@ -31,12 +31,10 @@ function App() {
     {/* <Switch> */}
 
     <Route exact path="/vendors" component={Vendor} />
+    <Route exact path="/vendor/:id" component={Vendordetail} />
+    <Route exact path="/foods" component={Food} /> 
+     <Route exact path="/ordersummary" component={Ordersummary} />
     
-    <Route exact path="/foods" component={Food} />
-    <Route exact path="/ordersummary" component={Ordersummary} />
-    {/* <Route exact path="/:id" component={Vendordetail} /> */}
-
-
     {/* </Switch> */}
     </Router> 
     

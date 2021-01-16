@@ -18,14 +18,14 @@ function Vendor() {
         
     <div>
       <div className="jumbotron text-center bg-info text-white shadow">
-        <div ><h1>Mumma's Mania</h1>      
+        <div ><h1>Food Mania</h1>      
             <p>!!!!! Order now the food of your mom's taste !!!!!</p>
         </div>
     </div>
       
     <div className="container-fluid">
         <div className="row d-flex justify-content-center">
-        <div className="row d-flex justify-content-center">
+        
                     {loading? (
                     <Spinner/>
                     ):error?(
@@ -42,7 +42,7 @@ function Vendor() {
                 </div>
         </div>
     </div>
-    </div>
+    
    
     )
 }

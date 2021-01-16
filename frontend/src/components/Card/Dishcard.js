@@ -15,7 +15,7 @@ export default function Dishcard({imageUrl,name,ratings,price,foodId}) {
     return (
                     <div className="col-md-4 col-xs-12  col-lg-4 col-sm-6">
                         <div data-aos="zoom-in-down" className="border border-success card shadow mx-auto px-auto " >
-                            <img className="card-img-top" src={imageUrl}
+                            <img className="card-img-top" src={imageUrl} style={{height:"170px"}}
                                 alt="Card image cap" />
                             <div className="card-body ">
                                 <h5 className="card-title text-center font-weight-bold">{name}</h5>

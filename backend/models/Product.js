@@ -5,18 +5,37 @@ const productSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    description:{
+    email:{
         type:String,
         required:true
     },
-    price:{
+    status:{
+        type:String,
+        required:true
+    },
+    phonenumber:{
         type:Number,
         required:true
     },
+    dishes:[
+        {
+            price:{
+                 type:Number,
+                 required:true
+            },
+            name:{
+                type:String,
+                required:true
+            }
+               
+        }
+    ]
+    ,
     imageUrl:{
         type:String,
         required:true
     }
+
 })
 
 const Product=mongoose.model('product',productSchema);

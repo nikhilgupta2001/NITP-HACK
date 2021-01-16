@@ -2,16 +2,13 @@ const Food=require('../models/Food');
 
 const getAllFoods=async(req,res)=>{
     try{
-        
-
-         const foods=await Food.find({});
+         const foods=await Food.find({}).populate('product',['_id','name']);
          console.log(foods);
          res.json(foods);
-    }
+       }
     catch(error){
         console.error(error);
         res.status(500).json({message:"Server Error"});
-
     }
 }
 
