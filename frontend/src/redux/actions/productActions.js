@@ -9,6 +9,7 @@ export const getProducts=()=>async(dispatch)=>{
 
        dispatch({
            type:actionTypes.GET_PRODUCTS_SUCCESS,
+           loading:false,
            payload:data,
        })
     }  
@@ -18,6 +19,7 @@ export const getProducts=()=>async(dispatch)=>{
             payload:error.response && error.response.data.message
             ? error.response.data.message
             :error.message,
+            
         }); 
     }
 };

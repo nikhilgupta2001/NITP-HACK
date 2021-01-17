@@ -9,6 +9,8 @@ import Vendor from './components/Vendor';
 import Vendordetail from './components/Vendordetail';
 import Food from './components/Food'
 import Ordersummary from './components/Ordersummary';
+import Checkout from './components/Checkout';
+import Dishvendor from './components/Dishvendor';
 function App() {
   return (
 
@@ -34,7 +36,8 @@ function App() {
     <Route exact path="/vendor/:id" component={Vendordetail} />
     <Route exact path="/foods" component={Food} /> 
      <Route exact path="/ordersummary" component={Ordersummary} />
-    
+     <Route exact path="/checkout" component={Checkout} />
+     <Route exact path="/dishvendor/:name" component={Dishvendor} />
     {/* </Switch> */}
     </Router> 
     

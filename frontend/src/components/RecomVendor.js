@@ -24,9 +24,10 @@ function RecomVendor() {
 
     useEffect(() => {
         dispatch(listFoods())
-    }, [dispatch])
+    }, [dispatch ])
 
     
+
 
     return (
         <div>
@@ -39,7 +40,8 @@ function RecomVendor() {
 
             <div className="container-fluid">
                 <div className="row d-flex justify-content-center">
-                    {loading? (
+                    {
+                    loading? (
                     <Spinner/>
                     ):error?(
                         <h2>{error}</h2>

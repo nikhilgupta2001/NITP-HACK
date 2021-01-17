@@ -7,36 +7,39 @@ import { getProductDetails } from '../redux/actions/productActions';
 
 // Spinner 
 import Spinner from './Spinner/Spinner';
-import dish from '../images/dish.jpg';
-import chef from '../images/chef.jpg';
+
+// import dish from '../images/dish.jpg';
+// import chef from '../images/chef.jpg';
+
 import chef_profile from '../images/chef_profile.jpg';
 
 import Dishcard from './Card/Dishcard';
 
 function Vendordetail({ match, history }) {
+    // console.log(match);
     const dispatch = useDispatch();
     const ProductsDetails = useSelector(state => state.getProductDetails);
 
-    const { product, loading, error } = ProductsDetails;
+    const { product , loading, error } = ProductsDetails;
 
     useEffect(() => {
-        if (product && match.params.id !== product._id) {
             dispatch(getProductDetails(match.params.id))
-        }
-    }, [dispatch, match, product]);
+    }, []);
 
-
+    
 
     return (
-
+        
         <div>
+            
         {
-            loading ?(
+            console.log(loading),
+            loading ? (
             <Spinner/>
-            ): error ? (
-           <h2>{error}</h2>
+            ): error ? ( 
+           <h2>{error}</h2>                                          
     ) : (
-        <div>
+        <div>  
          <div className="jumbotron text-center bg-info  shadow">
         <div className="page-content page-container" id="page-content" >
             <div className="padding-md-none">
@@ -90,33 +93,25 @@ function Vendordetail({ match, history }) {
                 </div>
             </div>
         </div>
-    
-
-         {/* <div className="container-fluid">
+</div>
+          <div className="container-fluid">
              <div className="row d-flex justify-content-center">
-             {  loading? (
-                    <Spinner/>
-                    ):error?(
-                        <h2>{error}</h2>
-                    ):(
+             {        
                          product.dishes.map((food)=><Dishcard key={food._id} 
                          foodId={food._id}
                          name={food.name}
                          price={food.price}
                          ratings={food.rating}
                          description={food.description}
-                         imageUrl={food.imageUrl}/>)
-                    )
+                         imageUrl={food.imageUrl}/> )
+                    
                     }
-             </div> */}
-
-         </div>
+             </div>  
+         </div> 
      </div> 
      
-        )
-        
-}
-             
+        )       
+}            
         </div>
              
     )
