@@ -42,7 +42,7 @@ export const getProductDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        product: action.payload,
+        products: action.payload,
       };
 
     case actionTypes.GET_PRODUCT_DETAILS_FAIL:
@@ -53,10 +53,44 @@ export const getProductDetailsReducer = (state = initialState, action) => {
       };
     case actionTypes.GET_PRODUCT_DETAILS_RESET:
       return {
-        product: {},
+        products: {},
       };
 
     default:
       return state;
   }
 };
+
+
+export const getDishVendorReducer=(state=initialState,action)=>{
+  switch (action.type){
+
+    case actionTypes.GET_DISHVENDOR_DETAILS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case actionTypes.GET_DISHVENDOR_DETAILS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        products: action.payload,
+      };
+
+    case actionTypes.GET_DISHVENDOR_DETAILS_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case actionTypes.GET_DISHVENDOR_DETAILS_RESET:
+      return {
+        products: {},
+      };
+
+    default:
+      return state;
+
+  }
+}

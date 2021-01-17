@@ -51,9 +51,27 @@ export const removeProductDetails=()=>(dispatch)=>{
     dispatch({
         type:actionTypes.GET_PRODUCT_DETAILS_RESET,
     });
-    
-    
+}
 
+export const getDishVendorDetail=(name)=>async(dispatch)=>{
+    try{
+        dispatch({type:actionTypes.GET_DISHVENDOR_DETAILS_REQUEST});
+        console.log(name);
+        const {data} =await axios.get(`/dishvendor/api/products/${name}`);
+         console.log(data);
+        dispatch({
+            type:actionTypes.GET_DISHVENDOR_DETAILS_SUCCESS,
+            payload:data,
+        })
+     }  
+     catch(error){
+         dispatch({
+             type:actionTypes.GET_DISHVENDOR_DETAILS_FAIL,
+             payload:error.response && error.response.data.message
+             ? error.response.data.message
+             :error.message,
+         }); 
+     }
 }
 
 

@@ -8,6 +8,7 @@ function Ordersummary() {
   const { cartItems } = cartDetails;
   const [state,setState]=useState(1);
   let sum=0;
+  let i=0;
   const onClickHandlerDecrease=(e)=>{
        setState(state-1);
   }
@@ -30,21 +31,29 @@ function Ordersummary() {
         </thead>
         <tbody>
           {
-            cartItems.map((cartIt) => {
-              return (
-                <tr>
-                  <td>{cartIt.name}</td>
-                  <td>Rs.{cartIt.price}</td>
-                  <td>
-                  <button onClick={onClickHandlerDecrease}><i class="fas fa-minus"></i></button>{state} <button onClick={onClickHandlerIncrease}> <i class="fas fa-plus"></i></button></td>
-                  <td>Rs {state * cartIt.price}</td>
-                </tr>
-              )
+            cartItems.map((cart) => {
+               return(
+                 cart.map((cartIt) =>{
+                   return(
+                    <tr>
+                    <td>{cartIt.name}</td>
+                    <td>Rs.{cartIt.price}</td>
+                    <td>
+                    <button onClick={onClickHandlerDecrease}><i class="fas fa-minus"></i></button>{state} <button onClick={onClickHandlerIncrease}> <i class="fas fa-plus"></i></button></td>
+                    <td>Rs {state * cartIt.price}</td>
+                  </tr>
+                   )
+                 }
+               
+               )
+               )
+              
             })
           }
+          
         </tbody>
       </table>
-      <div className="card lg-shadow">
+      {/* <div className="card lg-shadow">
         <div className="row d-flex justify-content-end">
           <div class="col-md-12 col-sm-12 col-lg-12">
             <h4 className="font-weight-bold">Subtotal : Rs.{
@@ -56,14 +65,10 @@ function Ordersummary() {
            </h4>
           </div>
         </div>
-      </div>
-
+      </div> */}
+    
       <Link to="/checkout" className="btn btn-block btn-dark text-light">Checkout</Link>
-
-
     </div>
-
   )
 }
-
 export default Ordersummary

@@ -19,7 +19,9 @@ function Navbar() {
       <li className="nav-item">
         <Link className="nav-link" to="/foods" >Food</Link>
       </li>
-
+      <li className="nav-item">
+        <Link className="nav-link" to="/sell" >Sell</Link>
+      </li>
       <li className="nav-item">
         <Link className="nav-link" to="/ordersummary" ><i className="fas fa-cart-plus"></i></Link>
       </li>

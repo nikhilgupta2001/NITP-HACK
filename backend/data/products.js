@@ -223,6 +223,168 @@ const products = [
       
     },
     {
+      name: "Ramesh lal",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker",
+      dishes:[
+        {
+          price:120,
+          name:"jalebi"
+        },
+        {
+          price:150,
+          name:"samosa"
+        },
+        
+        {
+          price:140,
+          name:"paneer"
+        },
+        {
+          price:180,
+          name:"Dal"
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
+      name: "Ram",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker",
+      dishes:[
+        {
+          price:120,
+          name:"tikka"
+        },
+        {
+          price:150,
+          name:"Soup"
+        },
+        
+        {
+          price:140,
+          name:"paneer"
+        },
+        {
+          price:180,
+          name:"Dal"
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
+      name: "sam",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker",
+      dishes:[
+        {
+          price:120,
+          name:"panner"
+        },
+        {
+          price:150,
+          name:"Soup"
+        },
+        
+        {
+          price:140,
+          name:"paneer"
+        },
+        {
+          price:180,
+          name:"Dal "
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
+      name: "Rameshxy",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker zx",
+      dishes:[
+        {
+          price:120,
+          name:"tikka"
+        },
+        {
+          price:150,
+          name:"samosa"
+        },
+        
+        {
+          price:140,
+          name:"paneer"
+        },
+        {
+          price:180,
+          name:"Dal"
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
+      name: "Ramesh",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker",
+      dishes:[
+        {
+          price:120,
+          name:"Panner"
+        },
+        {
+          price:150,
+          name:"Soup"
+        },
+        
+        {
+          price:140,
+          name:"paneer"
+        },
+        {
+          price:180,
+          name:"Dal"
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
+      name: "Ramesh War",
+      email:"hey@gmail.com",
+      phonenumber:9758633440,
+      status:"Sweet Maker 2",
+      dishes:[
+        {
+          price:120,
+          name:"Panner"
+        },
+        {
+          price:150,
+          name:"Soup"
+        },
+        
+        {
+          price:140,
+          name:"paneer masala"
+        },
+        {
+          price:180,
+          name:"Dal "
+        }
+      ],
+      imageUrl:"https://htn.com.au/wp-content/uploads/2018/02/PP18-DIPLOMA-IN-PROFESSIONAL-CHEF.jpg"
+      
+    },
+    {
       name: " Ram Lal",
       email:"hey@gmail.com",
       phonenumber:9758633440,

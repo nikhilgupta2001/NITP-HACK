@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Dishcard({imageUrl,name,ratings,price,foodId}) {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // const addToCardHandler=()=>{
     //     dispatch(addToCart(foodId))

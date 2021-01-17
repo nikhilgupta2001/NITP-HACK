@@ -20,7 +20,7 @@ function Vendordetail({ match, history }) {
     const dispatch = useDispatch();
     const ProductsDetails = useSelector(state => state.getProductDetails);
 
-    const { product , loading, error } = ProductsDetails;
+    const { products , loading, error } = ProductsDetails;
 
     useEffect(() => {
             dispatch(getProductDetails(match.params.id))
@@ -52,8 +52,8 @@ function Vendordetail({ match, history }) {
                                         <div className="m-b-25">
                                              <img src={chef_profile} className="img-radius" alt="User-Profile-Image"/>
                                          </div>
-                                        <h4 className="f-w-600">{product.name}</h4>
-                                        <p><b>{product.status}</b></p> <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                        <h4 className="f-w-600">{products.name}</h4>
+                                        <p><b>{products.status}</b></p> <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                     </div>
                                 </div>
                                 <div className="col-sm-8">
@@ -62,11 +62,11 @@ function Vendordetail({ match, history }) {
                                         <div className="row">
                                             <div className="col-sm-6">
                                                 <p className="m-b-10 f-w-600">Email</p>
-                                                <h6 className="text-muted f-w-400">{product.email}</h6>
+                                                <h6 className="text-muted f-w-400">{products.email}</h6>
                                             </div>
                                             <div className="col-sm-6">
                                                 <p className="m-b-10 f-w-600">Phone</p>
-                                                <h6 className="text-muted f-w-400">{product.phonenumber}</h6>
+                                                <h6 className="text-muted f-w-400">{products.phonenumber}</h6>
                                             </div>
                                         </div>
                                         <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Other Details</h6>
@@ -97,7 +97,7 @@ function Vendordetail({ match, history }) {
           <div className="container-fluid">
              <div className="row d-flex justify-content-center">
              {        
-                         product.dishes.map((food)=><Dishcard key={food._id} 
+                         products?.dishes?.map((food)=><Dishcard key={food._id} 
                          foodId={food._id}
                          name={food.name}
                          price={food.price}

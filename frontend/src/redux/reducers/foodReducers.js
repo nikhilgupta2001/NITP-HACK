@@ -2,22 +2,26 @@ import * as actionTypes from '../constants/foodConstants';
 
 const initialState={
     foods:[],
+    loading:true
 }
 export const getFoodsReducer=(state=initialState,action)=>{
     switch(action.type){
         case actionTypes.GET_FOODS_REQUEST:
            return {
+            ...state,
                loading:true,
                foods:[]
            }
 
            case actionTypes.GET_FOODS_SUCCESS:
                return{
+                ...state,
                    loading:false,
                    foods:action.payload
                }
                case actionTypes.GET_FOODS_FAIL:
                   return{
+                    ...state,
                       loading:true,
                       error:action.payload
                   }

@@ -8,21 +8,21 @@ export const cartReducer= (state=initialState , action )=>{
         case actionTypes.ADD_TO_CART:
             const item=action.payload;
              
-            const existItem = state.cartItems.find((x)=> x.product === item.product)
-
-             if(existItem)
-             {
-                 return {
-                     ...state,
-                     cartItems:state.cartItems.map((x)=> x.product === existItem.product ? item : x )
-                 }
-             }
-             else{
+            // const existItem = state.cartItems.find((x)=> x.product === item.product)
+        
+            //  if(existItem)
+            //  {
+            //      return {
+            //          ...state,
+            //          cartItems:state.cartItems.map((x)=> x.product === existItem.product ? item : x )
+            //      }
+            //  }
+            //  else{
                  return{
-                    ...state,
+                    // ...state,
                     cartItems:[...state.cartItems,item]
                  };
-             }
+            //  }
         case actionTypes.REMOVE_FROM_CART:
             return{
                 ...state,
