@@ -1,60 +1,100 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React,{useState} from "react";
+// import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { placeOrder } from "../redux/actions/productActions";
 
-export default function Checkout() {
-    return (
-        <div className="container">
-            <div className="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <div className="card border border-success " style={{width:"100%"}} >
-                    <h4 className="text-center font-weight-bold ">Checkout Form </h4>
-                    <form className="mx-auto" action="/payout" method="POST">
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" className="form-control" id="inputEmail4" placeholder="Email"  name="email"/>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" className="form-control" id="inputPassword4" placeholder="Password" name="password" />
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name="Address"/>
-                        </div>
-                        <div className="form-group">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" className="form-control" id="inputCity" name="city" />
-                            </div>
-                            <div className="form-group col-md-4">
-                                <label for="inputState">State</label>
-                                <input type="text" className="form-control" id="inputCity" name="state" />
-                            </div>
-                            <div className="form-group col-md-2">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" className="form-control" id="inputZip" name="zip" />
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="gridCheck" />
-                                <label className="form-check-label" for="gridCheck">
-                                    Check me out
-                </label>
-                            </div>
-                        </div>
-                        {/* <button type="submit" form="form1" value="Submit">Submit</button> */}
-                        <Link to="/" className="btn btn-block btn-dark text-light">Submit</Link>
-                    </form>
+export default function App() {
+  const dispatch = useDispatch();
+  const [email,setEmail]=useState("");
+  const [zip,setZip]=useState("");
+  const [address,setAddress]=useState("");
+  const [city,setCity]=useState("");
+  const [state,setState]=useState("");
 
-                </div>
+  // const { register, handleSubmit } = useForm();
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(e);
+      const data={
+        email,
+        zip,
+        address,
+        city,
+        state
+      }
+      dispatch(placeOrder(data));
+    // dispatch(placeOrder(data));
+  };
+  return (
+    <div className="container">
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+          <div style={{ width: "100%" }} className="card lg-shadow"></div>
+          <form onSubmit={handleSubmit}>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter email"
+                value={email}
+                onChange={e=>setEmail(e.target.value)}
+              />
+              <small id="emailHelp" class="form-text text-muted">
+                We'll never share your email with anyone else.
+              </small>
             </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">zip</label>
+              <input
+                // type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="zip"
+                value={zip}
+                onChange={e=>setZip(e.target.value)}
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Address</label>
+              <input
+                // type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Address"
+                value={address}
+                onChange={e=>setAddress(e.target.value)}
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">City</label>
+              <input
+                // type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="City"
+                value={city}
+                onChange={e=>setCity(e.target.value)}
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">state</label>
+              <input
+                // type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="state"
+                value={state}
+                onChange={e=>setState(e.target.value)}
+              />
+            </div>
+            <Link to="/"><button type="submit" class="btn btn-primary">
+              Submit
+            </button></Link>
+          </form>
         </div>
-         
-    )
+      </div>
+    </div>
+  );
 }

@@ -13,7 +13,8 @@ import Ordersummary from './components/Ordersummary';
 import Checkout from './components/Checkout';
 import Dishvendor from './components/Dishvendor';
 import SellDash from './components/Sell';
-
+import SellerProfile from './components/SellerProfile';
+import SellItem from './components/Selltem';
 function App() {
   return (
 
@@ -54,7 +55,8 @@ function App() {
      <Route exact path="/signup" component={Signup}/>
     
      <Route exact path="/sell" component={SellDash} />
-    
+     <Route exact path="/SellerProfile" component={SellerProfile} />
+     <Route exact path="/sellItem" component={SellItem} />
     {/* </Switch> */}
     
     </Router> 

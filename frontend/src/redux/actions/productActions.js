@@ -24,7 +24,6 @@ export const getProducts=()=>async(dispatch)=>{
     }
 };
 
-
 export const getProductDetails=(id)=>async(dispatch)=>{
     try{
        dispatch({type:actionTypes.GET_PRODUCT_DETAILS_REQUEST});
@@ -74,5 +73,10 @@ export const getDishVendorDetail=(name)=>async(dispatch)=>{
      }
 }
 
-
-
+export const placeOrder=(data)=>async(dispatch)=>{
+        // await axios.get('/payout')
+        console.log(data);
+        axios.post('/payout',data)
+        .then( res =>console.log(res))
+        .catch(err=> console.log(err));
+}    

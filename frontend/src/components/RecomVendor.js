@@ -10,6 +10,9 @@ import Spinner from './Spinner/Spinner';
 import Dishcard from './Card/Dishcard';
 
 
+// const dispatch = useDispatch();
+
+
 function RecomVendor() {
     const dispatch = useDispatch();
     const getProducts = useSelector(state => state.getProducts);
@@ -27,8 +30,6 @@ function RecomVendor() {
     }, [dispatch ])
 
     
-
-
     return (
         <div>
             <div class=" mt-4 lg-shadow jumbotron jumbotron-fluid bg-light">

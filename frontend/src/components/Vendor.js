@@ -10,6 +10,7 @@ function Vendor() {
     const dispatch = useDispatch();
     const getProducts = useSelector(state => state.getProducts);
     const { products, loading, error } = getProducts;
+    
     useEffect(() => {
         dispatch(listProducts())
     }, [dispatch])

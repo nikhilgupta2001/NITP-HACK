@@ -6,10 +6,12 @@ import { useDispatch } from 'react-redux';
 
 function VendorDishcard({imageUrl,name,status,productId,dish}){
     const dispatch=useDispatch();
+
     const addToCartHandler=()=>{
         console.log(dish);
         dispatch(addToCart(dish));
     }
+
     return (
       
         <div>

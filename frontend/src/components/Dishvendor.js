@@ -1,5 +1,6 @@
 import React from 'react'
 import VendorDishcard from './Card/VendorDishcard';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {getDishVendorDetail } from '../redux/actions/productActions';
@@ -34,13 +35,12 @@ function Dishvendor({match,history}) {
     </div>   
         <div className="container-fluid">
              <div className="row d-flex justify-content-center">
-             {        
+             {          
                          products.map((product)=><VendorDishcard key={product._id} 
                          dish={match.params.name}
                          name={product.name}
                          status={product.status}
-                         imageUrl={product.imageUrl} />)
-                         
+                         imageUrl={product.imageUrl} />)  
              }
              </div>  
          </div> 

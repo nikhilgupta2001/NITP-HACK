@@ -1,7 +1,7 @@
 import React from 'react'
 import img1 from '../images/img1.jpg'
-import img2 from '../images/img2.jpg'
-import img3 from '../images/img3.jpg'
+import img2 from '../images/food3.jpg'
+
 function Corousel() {
     return (
         <div>
@@ -19,7 +19,7 @@ function Corousel() {
                         <img className="d-block w-100" src={img2} style={{height:"350px"}} alt="Second slide" />
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src={img3} style={{height:"350px"}} alt="Third slide" />
+                        <img className="d-block w-100" src="https://b.zmtcdn.com/data/images/order/home_page_bg.jpg?output-format=webp" style={{height:"350px"}} alt="Third slide" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-
+const {foodSchema}=require("./Food");
 const productSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -17,25 +17,24 @@ const productSchema=new mongoose.Schema({
         type:Number,
         required:true
     },
-    dishes:[
-        {
-            price:{
-                 type:Number,
-                 required:true
-            },
-            name:{
-                type:String,
-                required:true
-            }
+    // dishes:[
+    //     {
+    //         price:{
+    //              type:Number,
+    //              required:true
+    //         },
+    //         name:{
+    //             type:String,
+    //             required:true
+    //         }
                
-        }
-    ]
-    ,
+    //     }
+    // ]
     imageUrl:{
         type:String,
         required:true
-    }
-
+    },
+    // foodItem:foodSchema
 })
 
 const Product=mongoose.model('product',productSchema);

@@ -4,17 +4,14 @@ const Schema=mongoose.Schema;
 
 
 const foodSchema=new mongoose.Schema({
-    product:{
-        type:Schema.Types.ObjectId,
-        ref:'product'
-    },
+ 
     name:{
         type:String,
         required:true
     },
     description:{
         type:String,
-        required:true
+        required:false
     },
     price:{
         type:Number,
@@ -31,5 +28,9 @@ const foodSchema=new mongoose.Schema({
 })
 
 const Food=mongoose.model('food',foodSchema);
-
-module.exports=Food;
+module.exports={
+    Food,
+    foodSchema
+}
+// module.exports=Food;
+// module.exports=foodSchema;
