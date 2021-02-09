@@ -27,7 +27,7 @@ function RecomVendor() {
 
     useEffect(() => {
         dispatch(listFoods())
-    }, [dispatch ])
+    }, [dispatch])
 
     
     return (

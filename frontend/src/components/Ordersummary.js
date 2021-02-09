@@ -7,8 +7,10 @@ function Ordersummary() {
   const cartDetails = useSelector(state => state.cart);
   const { cartItems } = cartDetails;
   const [state,setState]=useState(1);
+  
   let sum=0;
   let i=0;
+
   const onClickHandlerDecrease=(e)=>{
        setState(state-1);
   }

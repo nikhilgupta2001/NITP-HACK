@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import ItemCard from './Card/ItemCard';
-
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 export default function SellItem() {
@@ -11,25 +12,26 @@ export default function SellItem() {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   let [Dishes,setDishes]=useState([]);
-  
+  const authData = useSelector(state => state.authReducer.auth.data.res);
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
     let _id=1;
     var dish = {
       price, name, imageUrl,_id
     }
-
-    // Dishes.push(dish);
-    
-    //setDishes(Dishes.push(dish));
-
     setDishes(oldDish => [...oldDish,dish]);
-    // setState(Dishes);
+    axios.post(`/register/vendors/sellItem/${authData._id}`,dish) 
+    .then( res =>console.log(res))
+    .catch(err=> console.log(err));
+
   }
   
 
   return (
+    
     <div>
       <div className="container border border-success">
         <form enctype="multipart/form-data" onSubmit={handleSubmit}>
@@ -69,21 +71,29 @@ export default function SellItem() {
             />
           </div> 
 
-          <button type="submit" class="btn btn-primary mt-2">
+          <button type="submit" class="btn btn-primary mt-2 mb-4">
             Add Dish
               </button>
         </form>
       </div>
 
       <div>
+        
         {
-          Dishes.map((dish) => { 
-               <ItemCard key={dish._id}
+          <div className="container">
+            <div className="row">
+            {
+          Dishes.map((dish) => 
+         
+             <ItemCard key={dish._id}
               price={dish.price}
               name={dish.name}
               imageUrl={dish.imageUrl}
             />
-          })
+          )
+            }
+            </div>
+          </div>
         }
       </div>
     </div>

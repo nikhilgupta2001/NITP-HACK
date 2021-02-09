@@ -11,7 +11,7 @@ function Dishvendor({match,history}) {
     
     const dispatch = useDispatch();
     const dishvendordetails = useSelector(state => state.getDishVendorDetail);
-    console.log(dishvendordetails);
+    // console.log(dishvendordetails);
     const { products , loading, error } = dishvendordetails;
     useEffect(() => {
         dispatch(getDishVendorDetail(match.params.name))

@@ -10,7 +10,7 @@ export default function App() {
   const [zip,setZip]=useState("");
   const [address,setAddress]=useState("");
   const [city,setCity]=useState("");
-  const [state,setState]=useState("");
+  const [state,setState]=useState(""); 
 
   // const { register, handleSubmit } = useForm();
   const handleSubmit = (e) => {

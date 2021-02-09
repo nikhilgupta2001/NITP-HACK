@@ -1,6 +1,6 @@
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import './App.css';
-import Signup from './components/Signup'
+
 import Navbar from './components/Navbar';
 // import SideDrawer from './components/SideDrawer';
 import {useState} from 'react';
@@ -15,6 +15,9 @@ import Dishvendor from './components/Dishvendor';
 import SellDash from './components/Sell';
 import SellerProfile from './components/SellerProfile';
 import SellItem from './components/Selltem';
+
+
+
 function App() {
   return (
 
@@ -41,18 +44,13 @@ function App() {
     </Route> 
     {/* <Switch> */}
 
-    <Route exact path="/vendors" component={Vendor} />
-   
-    <Route exact path="/vendor/:id" component={Vendordetail} />
-    
-    <Route exact path="/foods" component={Food} /> 
-    
+     <Route exact path="/vendors" component={Vendor} />
+     <Route exact path="/vendor/:id" component={Vendordetail} />
+     <Route exact path="/foods" component={Food} /> 
      <Route exact path="/ordersummary" component={Ordersummary} />
-    
      <Route exact path="/checkout" component={Checkout} />
-    
      <Route exact path="/dishvendor/:name" component={Dishvendor} />
-     <Route exact path="/signup" component={Signup}/>
+     {/* <Route exact path="/signup" component={Register}/> */}
     
      <Route exact path="/sell" component={SellDash} />
      <Route exact path="/SellerProfile" component={SellerProfile} />

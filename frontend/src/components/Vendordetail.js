@@ -33,7 +33,7 @@ function Vendordetail({ match, history }) {
         <div>
             
         {
-            console.log(loading),
+            // console.log(loading),
             loading ? (
             <Spinner/>
             ): error ? ( 

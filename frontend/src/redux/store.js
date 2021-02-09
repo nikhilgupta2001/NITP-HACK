@@ -6,15 +6,15 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {cartReducer} from './reducers/cartReducers'
 import {getProductsReducer,getProductDetailsReducer,getDishVendorReducer} from './reducers/productReducers'
 import {getFoodsReducer,getFoodsDetailsReducer} from './reducers/foodReducers';
-
+import { authReducer } from './reducers/authReducers';
 const reducer=combineReducers({
   cart:cartReducer, 
   getProducts:getProductsReducer,
   getProductDetails: getProductDetailsReducer,
   getFoods:getFoodsReducer,
   getFoodsDetails:getFoodsDetailsReducer,
-  getDishVendorDetail:getDishVendorReducer
-
+  getDishVendorDetail:getDishVendorReducer,
+  authReducer:authReducer
 })
 
 const middleware=[thunk];

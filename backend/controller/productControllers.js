@@ -1,5 +1,5 @@
 const Product=require('../models/Product');
-
+const Us=require('../models/Product');
 const getAllProducts=async(req,res)=>{
     try{
          const products=await Product.find({});
@@ -12,12 +12,17 @@ const getAllProducts=async(req,res)=>{
 }
 
 
+
 const getAllProductById=async(req,res)=>{
     try{
          
-         const products=await Product.findById(req.params.id);
+        await Product.findById(req.params.id)
+         .populate('users',['_id','name'])
+         .then(product=>{
+            res.json(products); 
+         })
+         .catch(err=>res.status(404).json(err));
          
-         res.json(products); 
     }
     catch(error){
         console.error(error);

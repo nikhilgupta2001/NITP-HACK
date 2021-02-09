@@ -2,25 +2,27 @@ const express=require('express');
 const router=express.Router();
 const jwt=require('jsonwebtoken');
 const bcrypt=require('bcrypt');
-
 const User=require('../models/User');
 
 //route GET /api/products
 //@access Public
 
 router.post('/register',(req,res,next)=>{
-    const { name, email, password } = req.body.user;
-    
+    // console.log(req.body.name);
+    const { name, email, password } = req.body;
+    // console.log(13,password);
+    console.log(name,email,password);
+
     User.find({email})
     .exec()
     .then(user=>{
+        console.log(user);
         if(user.length>=1){  
-            errors='Email already exists!';
-            return res.status(400).json(errors);
+            message='Email already exists!';
+            return res.json(message);
         }
         else{ 
-            // console.log("Bella Ciao");
-            bcrypt.hash(user.password,10,(err,hash)=>{
+            bcrypt.hash(password,10,(err,hash)=>{
                 if(err)
                 {
                     return res.status(500).json({
@@ -28,6 +30,7 @@ router.post('/register',(req,res,next)=>{
                     });
                 }
                 else{
+                    console.log("Hola Ciao");
                     const user=new User({
                         email,
                         password:hash,
@@ -41,7 +44,7 @@ router.post('/register',(req,res,next)=>{
                           msg:  'User Registered Successfully',
                           res:   result
                         }
-                       return res.status(400).json(message);
+                       return res.json(message);
                        })
                        .catch(err =>{
                            console.log(err);

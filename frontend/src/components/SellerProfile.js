@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from 'axios';
 import {Link} from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 
+import { authReducer } from './../redux/reducers/authReducers';
 function SellerProfile() {
   // const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -9,24 +11,34 @@ function SellerProfile() {
   const [status, setStatus] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
-
+  const authData = useSelector(state => state.authReducer.auth.data.res);
+  
+  console.log(authData);
+  useEffect(() => {
+   
+    setEmail(authData.email);
+    // console.log(authData,name);
+    setName(authData.name);
+}, [])
+  
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
 
+    
     const data = {
       email,
       name, 
       phonenumber,
       imageUrl,
-      status
+      status,
+      // authData
     }
     
-    axios.post("/sellerprofile",data) 
+    axios.post(`/register/vendors/sellerprofile/${authData._id}`,data) 
     .then( res =>console.log(res))
     .catch(err=> console.log(err));
-    
   };
   
   return (
@@ -64,7 +76,8 @@ function SellerProfile() {
                     class="form-control"
                     id="inputEmail4"
                     placeholder="name"
-                    onChange={e => setName(e.target.value)}
+                    value={name}
+                    disabled
                   />
                 </div>
                 <div class="form-group col-md-6">
@@ -75,7 +88,8 @@ function SellerProfile() {
                     class="form-control"
                     id="inputPassword4"
                     placeholder="Enter your mail id"
-                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    disabled
                   />
                 </div>
               </div>

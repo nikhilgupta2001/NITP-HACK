@@ -52,7 +52,7 @@ export const removeProductDetails=()=>(dispatch)=>{
     });
 }
 
-export const getDishVendorDetail=(name)=>async(dispatch)=>{
+export const getDishVendorDetail = (name)=>async(dispatch)=>{
     try{
         dispatch({type:actionTypes.GET_DISHVENDOR_DETAILS_REQUEST});
         console.log(name);
